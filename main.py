@@ -13,7 +13,7 @@ intents = discord.Intents.all()
 class ArtistBot(commands.Bot):
     def __init__(self):
         super().__init__(
-            command_prefix=commands.when_mentioned_or("123"),
+            command_prefix=commands.when_mentioned_or(">"),
             owner_ids={
                 548530397034577930,
                 580385287297957888,
