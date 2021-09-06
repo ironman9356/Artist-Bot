@@ -6,7 +6,8 @@ authors = ["AyushAfre <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-discord = "^1.7.3"
+discord = "^1.7.3"L̥
+
 Flask = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
