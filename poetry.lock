@@ -75,7 +75,7 @@ optional = false
 python-versions = "*"
 
 [package.dependencies]
-"discord.py" = ">=1.7.3"
+"discord.py" = "2.2.0a"
 
 [[package]]
 name = "discord.py"

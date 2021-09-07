@@ -1,7 +1,12 @@
 import os
+import subprocess
 
-import discord
-from discord.ext import commands
+
+try:
+    import discord
+    from discord.ext import commands
+except ModuleNotFoundError:
+    subprocess.run('pip install -U git+https://github.com/ironman9356/discord.py')
 
 from keep_alive import keep_alive
 

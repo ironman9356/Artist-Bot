@@ -7,7 +7,7 @@ authors = ["AyushAfre <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Flask = "^2.0.1"
-discord = { git = "ssh://git@github.com:ironman9356/discord.py.git", branch = "master" }
+discord= { git = "ssh://git@github.com:ironman9356/discord.py.git", branch = "master" }
 
 
 [tool.poetry.dev-dependencies]
