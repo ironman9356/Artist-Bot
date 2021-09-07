@@ -1,7 +1,6 @@
 import os
 import subprocess
 
-
 try:
     import discord
     from discord.ext import commands
