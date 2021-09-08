@@ -5,7 +5,9 @@ try:
     import discord
     from discord.ext import commands
 except ModuleNotFoundError:
-    subprocess.run('pip install -U git+https://github.com/ironman9356/discord.py')
+    subprocess.run('pip install -U git+https://github.com/ironman9356/discord.py',shell=True)
+    import discord
+    from discord.ext import commands
 
 from keep_alive import keep_alive
 
