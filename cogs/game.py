@@ -65,7 +65,7 @@ class Roshambo(discord.ui.View):
 
     @discord.ui.button(label="Rock", emoji="🪨")
     async def rock(self, button: discord.ui.Button, interaction: discord.Interaction):
-        
+        self.scissors.emoji = "<:scissor:888314061299810325>"
         self.value = "rock"
         self.user = interaction.user
         self.paper.style = discord.ButtonStyle.red
@@ -78,7 +78,7 @@ class Roshambo(discord.ui.View):
 
     @discord.ui.button(label="Paper", emoji="📰")
     async def paper(self, button: discord.ui.Button, interaction: discord.Interaction):
-
+        self.scissors.emoji = "<:scissor:888314061299810325>"
         self.value = "paper"
         self.user = interaction.user
         self.paper.style = discord.ButtonStyle.green
