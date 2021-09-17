@@ -1,8 +1,10 @@
 import discord
 import random
 import datetime
-from discord.ext import commands
+from discord.ext import commands , tasks
 import sqlite3
+import subprocess 
+
 
 db = sqlite3.connect('./database/rps.db')
 cur = db.cursor()
@@ -46,7 +48,19 @@ class Roshambo(discord.ui.View):
         self.value = None
         self.user = None
         self.ctxuser= None
-        
+        self.gitupdate.start()
+    
+    @tasks.loop(minutes=10)
+    async def gitupdate(self):
+        print("Attempting to update database")
+        try:
+            subprocess.run("git add database/rps.db")
+            subprocess.run("git commit -m 'database update' ",shell=True)
+            subprocess.run("git push origin master",shell=True)
+        except Exception:
+            print("Update failed")
+            return
+        print("GIT UPDATED")
 
     @discord.ui.button(label="Rock", emoji="🪨")
     async def rock(self, button: discord.ui.Button, interaction: discord.Interaction):
@@ -287,6 +301,7 @@ class game(commands.Cog):
         db.commit()
 
         await ctx.send("Cleared the leaderboard")
+
 
 
 
