@@ -54,10 +54,11 @@ class Roshambo(discord.ui.View):
     async def gitupdate(self):
         print("Attempting to update database")
         try:
-            subprocess.run("git add database/rps.db")
+            subprocess.run("git add database/rps.db",shell=True)
             subprocess.run("git commit -m 'database update' ",shell=True)
             subprocess.run("git push origin master",shell=True)
-        except Exception:
+        except Exception as e:
+            print(e)
             print("Update failed")
             return
         print("GIT UPDATED")
