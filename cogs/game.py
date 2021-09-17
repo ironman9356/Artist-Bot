@@ -74,10 +74,10 @@ class Roshambo(discord.ui.View):
         self.scissors.disabled = True
         self.stop()
 
-    # @discord.ui.button(label="Scissors", emoji="✂")
-    @discord.ui.button(label="Scissors", emoji="<:scissor:888314061299810325>")
+    @discord.ui.button(label="Scissors", emoji="✂")
+    # @discord.ui.button(label="Scissors", emoji="<:scissor:888314061299810325>")
     async def scissors(self, button: discord.ui.Button, interaction: discord.Interaction):
-
+        self.scissors.emoji = "<:scissor:888314061299810325>"
         self.value = "scissors"
         self.user = interaction.user
         self.paper.style = discord.ButtonStyle.red
